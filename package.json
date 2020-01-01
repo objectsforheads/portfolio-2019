@@ -11,7 +11,9 @@
     "build:css": "mkdir -p ./dist/css && sass ./src/css/main.scss:./dist/css/main.css --no-source-map",
     "watch": "npm run watch:html & npm run watch:css",
     "watch:html": "watch 'npm run build:html' src/pages src/templates",
-    "watch:css": "watch 'npm run build:css' src/css"
+    "watch:css": "watch 'npm run build:css' src/css",
+    "livereload": "browser-sync start --server 'dist' --files './dist/**/*'",
+    "dev": "npm run watch & npm run livereload"
   },
   "author": "objectsforheads",
   "license": "ISC",
@@ -23,5 +25,8 @@
     "marked": "^0.8.0",
     "sass": "^1.24.0",
     "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.7"
   }
 }
