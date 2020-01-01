@@ -439,6 +439,18 @@ template {
   font-weight: 400;
   font-style: italic;
 }
+@font-face {
+  font-family: "Uni 05";
+  src: url("../assets/fonts/uni05_53-webfont.woff2") format("woff2"), url("../assets/fonts/uni05_53-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Uni 05";
+  src: url("../assets/fonts/uni05_63-webfont.woff2") format("woff2"), url("../assets/fonts/uni05_63-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "Volkorn";
@@ -452,4 +464,113 @@ h1, .h1 {
 
 body {
   font-family: "Volkorn";
+}
+
+a {
+  font-family: "Uni 05";
+  font-weight: 300;
+  color: #333;
+  font-size: 85%;
+  text-decoration: none;
+  background: linear-gradient(#53f4ff, #53f4ff);
+  background-repeat: no-repeat;
+  background-position: left 0 bottom 0em;
+  background-size: 100% 0.4rem;
+  transition: all 125ms;
+  color: #000;
+}
+a:hover {
+  font-weight: 300;
+  background-size: 100% 1rem;
+}
+
+.page-title {
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+@media (max-width: 40rem) {
+  .page-title {
+    width: 100%;
+  }
+}
+
+*, *::before, *::after {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.content {
+  padding: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron {
+  display: flex;
+  max-width: 40rem;
+}
+
+.jumbotron-left,
+.jumbotron-right {
+  flex: 1;
+}
+
+.jumbotron-left {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 3rem 1.5rem 3rem 3rem;
+}
+.jumbotron-left > h1 {
+  margin: 0;
+  margin-bottom: 1rem;
+  line-height: 0.8;
+}
+.jumbotron-left .nav-link {
+  display: block;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background: none;
+  line-height: 1.5;
+}
+.jumbotron-left .nav-link:hover {
+  font-weight: 500;
+}
+
+.jumbotron-right {
+  text-align: left;
+  padding: 3rem 3rem 3rem 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.jumbotron-right p {
+  line-height: 1.3;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 40rem) {
+  .jumbotron {
+    flex-direction: column;
+  }
+
+  .jumbotron-left {
+    text-align: left;
+    align-items: start;
+    padding: 3rem;
+  }
+
+  .jumbotron-right {
+    padding: 3rem;
+  }
 }
