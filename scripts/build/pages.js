@@ -103,3 +103,7 @@ Promise.all(convertedAllTemplates).then(() => {
 // TODO: add automatically generated meta data on frontmatter (created, last updated, etc)
 // TODO: add cache busting
 // TODO: build in a staging environment so deploy doesn't just push to production
+// TODO: refactor templates so they're nestable or something - copy pasting basic HTML is 🙅
+// TODO: refactor functions so there's less copy pasta
+// TODO: clean up clean:html so it can find nested html files
+// TODO: remove browser-sync if possible
