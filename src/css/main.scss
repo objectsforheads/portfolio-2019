@@ -1,3 +1,5 @@
 @use './reset.css';
 @use './normalize.css';
-@use './typefaces.css';
+@use './typefaces.scss';
+@use './global.scss';
+@use './homepage.scss';
