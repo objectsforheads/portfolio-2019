@@ -470,9 +470,18 @@ a {
   font-family: "Uni 05";
   font-weight: 300;
   color: #333;
+  font-size: 85%;
+  text-decoration: none;
+  background: linear-gradient(#53f4ff, #53f4ff);
+  background-repeat: no-repeat;
+  background-position: left 0 bottom 0em;
+  background-size: 100% 0.4rem;
+  transition: all 125ms;
+  color: #000;
 }
 a:hover {
-  font-weight: 500;
+  font-weight: 300;
+  background-size: 100% 1rem;
 }
 
 .page-title {
@@ -488,10 +497,6 @@ a:hover {
   .page-title {
     width: 100%;
   }
-}
-.page-title > a:hover {
-  font-weight: 300;
-  letter-spacing: 1px;
 }
 
 *, *::before, *::after {
@@ -539,26 +544,15 @@ body {
   background: none;
   line-height: 1.5;
 }
+.jumbotron-left .nav-link:hover {
+  font-weight: 500;
+}
 
 .jumbotron-right {
   text-align: left;
   padding: 3rem 3rem 3rem 1.5rem;
   display: flex;
   align-items: center;
-}
-.jumbotron-right a {
-  font-size: 85%;
-  text-decoration: none;
-  background: linear-gradient(#53f4ff, #53f4ff);
-  background-repeat: no-repeat;
-  background-position: left 0 bottom 0em;
-  background-size: 100% 0.4rem;
-  transition: all 125ms;
-  color: #000;
-}
-.jumbotron-right a:hover {
-  font-weight: 300;
-  background-size: 100% 1rem;
 }
 .jumbotron-right p {
   line-height: 1.3;

@@ -32,6 +32,10 @@ body {
         text-transform: uppercase;
         background: none;
         line-height: 1.5;
+
+        &:hover {
+            font-weight: 500;
+          }
       }
 }
 
@@ -40,22 +44,6 @@ body {
     padding: 3rem 3rem 3rem 1.5rem;
     display: flex;
     align-items: center;
-
-    a {
-        font-size: 85%;
-        text-decoration: none;
-        background: linear-gradient(rgb(83, 244, 255), rgb(83, 244, 255));
-        background-repeat: no-repeat;
-        background-position: left 0 bottom 0em;
-        background-size: 100% 0.4rem;
-        transition: all 125ms;
-        color: #000;
-
-        &:hover {
-            font-weight: 300;
-            background-size: 100% 1rem;
-        }
-    }
         
     p {
         line-height: 1.3;
