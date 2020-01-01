@@ -2,7 +2,9 @@ const glob = require('glob');
 const handlebars = require('handlebars')
 const marked = require('marked');
 const matter = require('gray-matter');
+const mkdirp = require('mkdirp');
 const fs = require('fs');
+const path = require('path');
 const Entities = require('html-entities').XmlEntities;
 const entities = new Entities();
 
@@ -36,7 +38,7 @@ Promise.all(convertedAllTemplates).then(() => {
     const convertedAllContentToHtml = [];
 
     // Markdown files should be processed using gray-matter and marked into html
-    const markdownFiles = glob.sync(`${inputDirectory}/*.md`);
+    const markdownFiles = glob.sync(`${inputDirectory}/**/*.md`);
     markdownFiles.forEach(function(file) {
         convertedAllContentToHtml.push(new Promise((resolve, reject) => {
             fs.readFile(file, function(readError, data) {
@@ -54,7 +56,7 @@ Promise.all(convertedAllTemplates).then(() => {
                 const outputFile = templates[template](frontmatter);
                 // Save output
                 output.push({
-                    path: file.replace(inputDirectory, '').match(/[ \w-]+?(?=\.)/)[0],
+                    path: file.replace(inputDirectory, '').replace('\.md', ''),
                     html: outputFile
                 })
                 resolve();
@@ -77,7 +79,7 @@ Promise.all(convertedAllTemplates).then(() => {
                 const outputFile = templates[template](frontmatter);
                 // Save output
                 output.push({
-                    path: file.replace(inputDirectory, '').match(/[ \w-]+?(?=\.)/)[0],
+                    path: file.replace(inputDirectory, '').replace('\.html', ''),
                     html: outputFile
                 })
                 resolve();
@@ -88,7 +90,9 @@ Promise.all(convertedAllTemplates).then(() => {
     // Write all output to files
     Promise.all(convertedAllContentToHtml).then(() => {
         output.forEach(function(file) {
-            fs.writeFile(`${outputDirectory}/${file.path}.html`, file.html, function(error) {
+            const directoryPath = path.dirname(`${outputDirectory}${file.path}.html`);
+            mkdirp.sync(directoryPath);
+            fs.writeFile(`${outputDirectory}${file.path}.html`, file.html, function(error) {
                 if (error) throw error;
             })
         })
