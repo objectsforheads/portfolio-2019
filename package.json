@@ -15,7 +15,8 @@
     "watch:html": "watch 'npm run build:html' src/pages src/templates",
     "watch:css": "watch 'npm run build:css' src/css",
     "livereload": "browser-sync start --server 'dist' --files './dist/**/*'",
-    "dev": "npm run watch & npm run livereload"
+    "dev": "npm run watch & npm run livereload",
+    "deploy": "cd dist; git add *; git commit -m 'update portfolio'; git push"
   },
   "author": "objectsforheads",
   "license": "ISC",
