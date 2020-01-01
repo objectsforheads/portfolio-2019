@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>objectsforheads - {{pageTitle}}</title>
+  <link href="/css/main.css" rel=stylesheet />
+</head>
+<body>
+    <div class="h1 page-title"><a href="/">objectsforheads.com</a></div>
+  <div class="content">
+    <p>{{created}}</p>
+    <h1>{{pageTitle}}</h1>
+    {{content}}
+</div>
+</body>
+</html>
