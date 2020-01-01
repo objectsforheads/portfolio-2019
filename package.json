@@ -6,9 +6,11 @@
     "clean": "npm run clean:html & npm run clean:css",
     "clean:html": "rm -rf ./dist/*.*",
     "clean:css": "rm -rf ./dist/css",
+    "clean:assets": "rm -rf ./dist/assets",
     "build": "npm run build:html && npm run build:css",
     "build:html": "node ./scripts/build/pages.js",
     "build:css": "mkdir -p ./dist/css && sass ./src/css/main.scss:./dist/css/main.css --no-source-map",
+    "build:assets": "npm run clean:assets && mkdir -p ./dist/assets && cp -r ./src/assets ./dist/",
     "watch": "npm run watch:html & npm run watch:css",
     "watch:html": "watch 'npm run build:html' src/pages src/templates",
     "watch:css": "watch 'npm run build:css' src/css",
@@ -18,6 +20,7 @@
   "author": "objectsforheads",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
     "handlebars": "^4.5.3",
@@ -25,8 +28,5 @@
     "marked": "^0.8.0",
     "sass": "^1.24.0",
     "watch": "^1.0.2"
-  },
-  "dependencies": {
-    "browser-sync": "^2.26.7"
   }
 }
