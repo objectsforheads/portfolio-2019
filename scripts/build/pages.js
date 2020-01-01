@@ -94,3 +94,8 @@ Promise.all(convertedAllTemplates).then(() => {
         })
     })
 });
+
+// TODO: fix deploy script (make sure it's on master, remove DS_Store, etc etc)
+// TODO: add automatically generated meta data on frontmatter (created, last updated, etc)
+// TODO: add cache busting
+// TODO: build in a staging environment so deploy doesn't just push to production
