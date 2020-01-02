@@ -54,6 +54,7 @@ Promise.all(convertedAllTemplates).then(() => {
                 const frontmatter = {
                     content: fileData.content,
                     ...fileData.data,
+                    created: Date.now(),
                     stylesheets: ['main'].concat(fileData.data.styles || [])
                 };
                 const template = frontmatter.template || 'default';
@@ -81,6 +82,7 @@ Promise.all(convertedAllTemplates).then(() => {
                 const frontmatter = {
                     content: fileData.content,
                     ...fileData.data,
+                    created: Date.now(),
                     stylesheets: ['main'].concat(fileData.data.styles || [])
                 };
                 const template = frontmatter.template || 'default';

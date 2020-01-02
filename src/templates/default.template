@@ -3,7 +3,7 @@
 <head>
   <title>objectsforheads - {{pageTitle}}</title>
   {{#each stylesheets}}
-  <link href="/css/{{this}}.css" rel=stylesheet />
+  <link href="/css/{{this}}.css?{{../created}}" rel=stylesheet />
   {{/each}}
 </head>
 <body>
