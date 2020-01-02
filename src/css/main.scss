@@ -1,8 +1,7 @@
-@use './reset.css';
-@use './normalize.css';
-@use './typefaces.scss';
-@use './global.scss';
-@use './homepage.scss';
+@use './includes/_reset.css';
+@use './includes/_normalize.css';
+@use './includes/_typefaces.scss';
+@use './includes/_global.scss';
 
 // TODO: add css variables for colors, numbers, etc
 // TODO: only load page-specific css for that page as necessasry
