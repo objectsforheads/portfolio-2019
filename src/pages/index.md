@@ -1,5 +1,6 @@
 ---
 pageTitle: 👋
+styles: homepage
 ---
 <div class="jumbotron">
     <div class="jumbotron-left">
