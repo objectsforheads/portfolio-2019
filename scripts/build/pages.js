@@ -51,7 +51,11 @@ Promise.all(convertedAllTemplates).then(() => {
                 // Marked has encoded the text, decode it here
                 fileData.content = entities.decode(fileData.content);
                 // Pass both to handlebars to generate final html
-                const frontmatter = {content: fileData.content, ...fileData.data};
+                const frontmatter = {
+                    content: fileData.content,
+                    ...fileData.data,
+                    stylesheets: ['main'].concat(fileData.data.styles || [])
+                };
                 const template = frontmatter.template || 'default';
                 const outputFile = templates[template](frontmatter);
                 // Save output
@@ -74,7 +78,11 @@ Promise.all(convertedAllTemplates).then(() => {
                 // Pull frontmatter out
                 const fileData = matter(fileContents);
                 // Pass both to handlebars to generate final html
-                const frontmatter = {content: fileData.content, ...fileData.data};
+                const frontmatter = {
+                    content: fileData.content,
+                    ...fileData.data,
+                    stylesheets: ['main'].concat(fileData.data.styles || [])
+                };
                 const template = frontmatter.template || 'default';
                 const outputFile = templates[template](frontmatter);
                 // Save output

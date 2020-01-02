@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>objectsforheads - {{pageTitle}}</title>
-  <link href="/css/main.css" rel=stylesheet />
+  {{#each stylesheets}}
+  <link href="/css/{{this}}.css" rel=stylesheet />
+  {{/each}}
 </head>
 <body>
     <div class="h1 page-title"><a href="/">objectsforheads.com</a></div>
