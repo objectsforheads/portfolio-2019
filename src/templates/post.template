@@ -9,7 +9,7 @@
 <body>
     <div class="h1 page-title"><a href="/">objectsforheads.com</a></div>
   <div class="content">
-    <p>{{created}}</p>
+    <p>{{posted}}</p>
     <h1>{{pageTitle}}</h1>
     {{content}}
 </div>
