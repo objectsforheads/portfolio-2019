@@ -4,7 +4,11 @@ styles: homepage
 ---
 <div class="jumbotron">
     <div class="jumbotron-left">
-        <h1>objects<br />for heads</h1>
+        <div class="name">
+            <div class="name-shadow">objects<br />for heads</div>
+            <div class="name-stroke">objects<br />for heads</div>
+            <h1 class="name-text">objects<br />for heads</h1>
+        </div>
         <nav>
         <a href="/about.html" class="nav-link">About</a>
         <a href="https://github.com/objectsforheads" class="nav-link" target="_blank" rel="external">Github</a>
