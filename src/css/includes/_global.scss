@@ -21,7 +21,7 @@ body {
     font-weight: 500;
     letter-spacing: -0.0675rem;
     font-size: 3rem;
-    color: #333;
+    color: $typeColor;
     text-transform: uppercase;
 
     @if $isAliased == true {
@@ -32,7 +32,7 @@ body {
 
 .name-shadow {
     @include siteHeaderType;
-    @include long-shadow(text, rgb(83, 244, 255), 600, true, true, left);
+    @include long-shadow(text, $highlightColor, 600, true, true, left);
     width: 100%;
 }
 
@@ -57,10 +57,10 @@ body {
 // When the site header links somewhere (ie. all pages except homepage)
 // ✨ animate it ✨
 @keyframes YOLOColors {
-    0%   {@include long-shadow(text, rgb(231, 34, 205), 600, true, true, left);}
-    33%  {@include long-shadow(text, rgb(83, 244, 255), 600, true, true, left);}
-    66%  {@include long-shadow(text, yellow, 600, true, true, left);}
-    100% {@include long-shadow(text, rgb(231, 34, 205), 600, true, true, left);}
+    0%   {@include long-shadow(text, $accentMagenta, 600, true, true, left);}
+    33%  {@include long-shadow(text, $highlightColor, 600, true, true, left);}
+    66%  {@include long-shadow(text, $accentYellow, 600, true, true, left);}
+    100% {@include long-shadow(text, $accentMagenta, 600, true, true, left);}
 }
 
 a.name-shadow {

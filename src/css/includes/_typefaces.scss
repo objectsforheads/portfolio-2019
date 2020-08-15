@@ -109,15 +109,15 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 300;
-  color: #333;
+  color: $typeColor;
   font-size: 95%;
   text-decoration: none;
-  background: linear-gradient(rgb(83, 244, 255), rgb(83, 244, 255));
+  background: linear-gradient($highlightColor, $highlightColor);
   background-repeat: no-repeat;
   background-position: left 0 bottom 0em;
   background-size: 100% 0.4rem;
   transition: all 125ms;
-  color: #000;
+  color: $typeColor;
 
   &:active,
   &:focus,

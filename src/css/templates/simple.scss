@@ -22,7 +22,7 @@
 }
 
 .nav-bar {
-    border-top: 1rem solid #333;
+    border-top: 1rem solid $typeColor;
     margin-top: 2rem;
     padding: 2rem 0 0 0;
 
@@ -40,7 +40,7 @@
 }
 
 .page-title {
-    border-top: 0.5rem solid #333;
+    border-top: 0.5rem solid $typeColor;
     margin-top: 2rem;
     padding: 0 2rem 0 0;
     text-align: left;
@@ -48,7 +48,7 @@
 
 .content {
     text-align: left;
-    border-top: 0.25rem solid #333;
+    border-top: 0.25rem solid $typeColor;
     margin-top: 2rem;
     min-width: 36rem;
     padding: 2rem 0 0 0;
