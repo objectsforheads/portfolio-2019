@@ -89,8 +89,10 @@
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: 'Volkorn';
-  font-weight: 800;
+  font-family: 'Uni 05';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
   display: block;
 }
 
@@ -104,9 +106,11 @@ body {
 
 a {
   font-family: 'Uni 05';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-weight: 300;
   color: #333;
-  font-size: 85%;
+  font-size: 95%;
   text-decoration: none;
   background: linear-gradient(rgb(83, 244, 255), rgb(83, 244, 255));
   background-repeat: no-repeat;

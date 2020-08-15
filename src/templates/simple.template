@@ -5,9 +5,26 @@
   {{#each stylesheets}}
   <link href="/css/{{this}}.css?{{../created}}" rel=stylesheet />
   {{/each}}
+  <link href="/css/templates/simple.css?{{../created}}" rel=stylesheet />
 </head>
 <body>
-    <div class="h1 page-title"><a href="/">objectsforheads.com</a></div>
-  <div class="content">{{content}}</div>
+  <div class="page">
+    <div class="name">
+      <div class="name-shadow"><span class="word">objects</span><br /><span class="word">for</span> <span class="word">heads</span></div>
+      <div class="name-stroke">objects<br />for heads</div>
+      <a href="/" class="name-text">objects<br />for heads</a>
+    </div>
+    <div class="wrapper">
+      <div class="nav-bar">
+        <a href="/about.html">about</a>
+        <a href="/">github</a>
+        <a href="/contact.html">contact</a>
+      </div>
+      <div class="page-title">
+        <h1>{{pageTitle}}</h1>
+      </div>
+      <div class="content">{{content}}</div>
+    </div>
+  </div>
 </body>
 </html>
