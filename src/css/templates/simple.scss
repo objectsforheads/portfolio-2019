@@ -3,30 +3,20 @@
 
 .page {
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    overflow: hidden;
+    margin: auto;
 }
 
 .name {
     display: inline-block;
-}
-
-.wrapper {
-    background: white;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100vw;
-        height: 100vh;
-        background: white;
-    }
+    margin-bottom: 2rem;
 }
 
 .nav-bar {
     border-top: 1rem solid $typeColor;
-    margin-top: 2rem;
     padding: 2rem 0 0 0;
 
     a {
@@ -47,6 +37,11 @@
     margin-top: 2rem;
     padding: 0 2rem 0 0;
     text-align: left;
+}
+
+.wrapper {
+    flex: auto;
+    background: $bgColor;
 }
 
 .content {
