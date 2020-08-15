@@ -24,16 +24,19 @@ $bgColor: white;
     margin-bottom: 1rem;
 }
 
-@mixin homepageHeaderType {
+@mixin homepageHeaderType($isAliased: true) {
     line-height: 0.8;
     font-family: 'Uni 05';
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     font-weight: 500;
     letter-spacing: -0.0675rem;
     font-size: 3rem;
     color: #333;
     text-transform: uppercase;
+
+    @if $isAliased == true {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
 }
 
 .name-shadow {
@@ -52,7 +55,7 @@ $bgColor: white;
 }
 
 .name-stroke {
-    @include homepageHeaderType;
+    @include homepageHeaderType(false);
     color: $bgColor;
     position: absolute;
     top: 0;
