@@ -7,7 +7,7 @@
     flex-direction: column;
     width: 40rem;
     overflow: hidden;
-    margin: auto;
+    margin: 2rem;
 }
 
 .name {
@@ -61,6 +61,15 @@
     text-align: left;
     border-top: 0.25rem solid $typeColor;
     margin-top: 2rem;
-    min-width: 36rem;
     padding: 2rem 0 0 0;
+}
+
+footer {
+    font-family: 'Uni 05';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-top: 0.125rem solid $typeColor;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    line-height: 1.6;
 }

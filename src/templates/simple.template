@@ -21,18 +21,23 @@
       </div>
     </div>
     <div class="wrapper">
-      <div class="nav-bar">
-        <a href="/about.html">about</a>
-        <a href="/">github</a>
-        <a href="/contact.html">contact</a>
-      </div>
-      <div class="page-title">
-        {{#if posted}}
-        <div class="metadata">{{posted}}</div>
-        {{/if}}
-        <h1>{{pageTitle}}</h1>
-      </div>
-      <div class="content">{{content}}</div>
+      <nav class="nav-bar">
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="https://github.com/objectsforheads" class="nav-link" target="_blank" rel="external">Github</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </nav>
+      <main>
+        <div class="page-title">
+          {{#if posted}}
+          <div class="metadata">{{posted}}</div>
+          {{/if}}
+          <h1>{{pageTitle}}</h1>
+        </div>
+        <div class="content">{{content}}</div>
+      </main>
+      <footer>
+        ©{{year}} objectsforheads
+      </footer>
     </div>
   </div>
 </body>

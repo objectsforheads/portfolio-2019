@@ -55,6 +55,7 @@ Promise.all(convertedAllTemplates).then(() => {
                     content: fileData.content,
                     ...fileData.data,
                     created: Date.now(),
+                    year: (new Date()).getFullYear(),
                     stylesheets: ['main'].concat(fileData.data.styles || [])
                 };
                 const template = frontmatter.template || 'default';
