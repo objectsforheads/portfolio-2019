@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>objectsforheads - {{pageTitle}}</title>
@@ -24,7 +24,7 @@
     <div class="wrapper">
       <nav class="nav-bar">
         <a href="/about.html" class="nav-link">About</a>
-        <a href="https://github.com/objectsforheads" class="nav-link" target="_blank" rel="external">Github</a>
+        <a href="https://github.com/objectsforheads" class="nav-link" target="_blank" rel="noopener">Github</a>
         <a href="/contact.html" class="nav-link">Contact</a>
       </nav>
       <main>
