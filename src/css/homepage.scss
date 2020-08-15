@@ -1,8 +1,5 @@
 @import './includes/_longshadow.scss';
 
-// #FFC6C6
-$bgColor: white;
-
 .jumbotron {
     display: flex;
     max-width: 40rem;
@@ -22,45 +19,6 @@ $bgColor: white;
 
 .name {
     margin-bottom: 1rem;
-}
-
-@mixin homepageHeaderType($isAliased: true) {
-    line-height: 0.8;
-    font-family: 'Uni 05';
-    font-weight: 500;
-    letter-spacing: -0.0675rem;
-    font-size: 3rem;
-    color: #333;
-    text-transform: uppercase;
-
-    @if $isAliased == true {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    }
-}
-
-.name-shadow {
-    @include homepageHeaderType;
-    @include long-shadow(text, rgb(83, 244, 255), 600, true, true, left);
-    width: 100%;
-}
-
-.name-text {
-    margin: 0;
-    @include homepageHeaderType;
-    position: absolute;
-    top: -0.25rem;
-    right: -0.5rem;
-    width: 100%;
-}
-
-.name-stroke {
-    @include homepageHeaderType(false);
-    color: $bgColor;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
 }
 
 .nav-link {
@@ -106,8 +64,4 @@ $bgColor: white;
     .jumbotron-right {
         padding: 3rem;
     }
-}
-
-body {
-    background: $bgColor;
 }

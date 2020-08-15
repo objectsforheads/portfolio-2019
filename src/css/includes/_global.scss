@@ -1,3 +1,6 @@
+@import './_longshadow.scss';
+@import './_vars.scss';
+
 *, *::before, *::after {
     position: relative;
     box-sizing: border-box;
@@ -8,4 +11,95 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $bgColor;
+}
+
+// Site header
+@mixin siteHeaderType($isAliased: true) {
+    line-height: 0.8;
+    font-family: 'Uni 05';
+    font-weight: 500;
+    letter-spacing: -0.0675rem;
+    font-size: 3rem;
+    color: #333;
+    text-transform: uppercase;
+
+    @if $isAliased == true {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.name-shadow {
+    @include siteHeaderType;
+    @include long-shadow(text, rgb(83, 244, 255), 600, true, true, left);
+    width: 100%;
+}
+
+.name-stroke {
+    @include siteHeaderType(false);
+    color: $bgColor;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.name-text {
+    margin: 0;
+    @include siteHeaderType;
+    position: absolute;
+    top: -0.25rem;
+    right: -0.5rem;
+    width: 100%;
+}
+
+// When the site header links somewhere (ie. all pages except homepage)
+// ✨ animate it ✨
+@keyframes YOLOColors {
+    0%   {@include long-shadow(text, rgb(231, 34, 205), 600, true, true, left);}
+    33%  {@include long-shadow(text, rgb(83, 244, 255), 600, true, true, left);}
+    66%  {@include long-shadow(text, yellow, 600, true, true, left);}
+    100% {@include long-shadow(text, rgb(231, 34, 205), 600, true, true, left);}
+}
+
+a.name-shadow {
+    background: none;
+    display: block;
+    transition: all 0ms;
+
+    &:active,
+    &:focus,
+    &:hover {
+        font-weight: 500;
+        text-shadow: none;
+
+        .word {
+            animation-name: YOLOColors;
+            animation-duration: 1500ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: step-start;
+        }
+
+        .word:nth-of-type(1) {
+            animation-delay: 0ms;
+        }
+        .word:nth-of-type(2) {
+            animation-delay: -500ms;
+        }
+        .word:nth-of-type(3) {
+            animation-delay: -1000ms;
+        }
+    }
+
+    // Since we make the first element the a tag,
+    // we need to disable pointer events on the elements that stack on top of it
+    // (they need to be stacked like this for the aesthetic)
+    & ~ .name-stroke {
+        pointer-events: none;
+    }
+
+    & ~ .name-text {
+        pointer-events: none;
+    }
 }

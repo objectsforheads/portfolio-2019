@@ -10,9 +10,15 @@
 <body>
   <div class="page">
     <div class="name">
-      <div class="name-shadow"><span class="word">objects</span><br /><span class="word">for</span> <span class="word">heads</span></div>
-      <div class="name-stroke">objects<br />for heads</div>
-      <a href="/" class="name-text">objects<br />for heads</a>
+      <a href="/" class="name-shadow">
+        <span class="word">objects</span><br /><span class="word">for</span> <span class="word">heads</span>
+      </a>
+      <div class="name-stroke">
+        objects<br />for heads
+      </div>
+      <div class="name-text">
+        objects<br />for heads
+      </div>
     </div>
     <div class="wrapper">
       <div class="nav-bar">
