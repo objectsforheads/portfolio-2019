@@ -1,7 +1,7 @@
 ---
 pageTitle: Hello World!
 posted: Dec 31st, 2019
-template: post
+template: simple
 ---
 
 Belatedly (ie. on Dec 30th), I realized that if I wanted to get my 2019 portfolio update done (an annual yak shaving tradition that, according to my commit history, has fallen to the wayside), I had precisely two days in which to do so. I call it yak shaving because I didn't have any real incentive to do so, only that I indulge in it as a way to refresh some rustier working knowledge and to try out some new process changes (generously, improvements) on a well-defined problem. That being said, my 2017 portfolio hasn't quite aged gracefully over the years:
