@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>objectsforheads - {{pageTitle}}</title>
   {{#each stylesheets}}
   <link href="/css/{{this}}.css?{{../created}}" rel=stylesheet />
@@ -36,6 +37,8 @@
         <div class="content">{{content}}</div>
       </main>
       <footer>
+        <a href="#">↑ return to top</a>
+        <br />
         ©{{year}} objectsforheads
       </footer>
     </div>
