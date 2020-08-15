@@ -72,7 +72,9 @@ $bgColor: white;
     font-weight: 500;
 
     &:active,
+    &:focus,
     &:hover {
+        outline: 0;
         font-weight: 500;
         white-space: nowrap;
         &::before {
