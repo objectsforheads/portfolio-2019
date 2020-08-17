@@ -108,27 +108,43 @@ body {
   line-height: 1.5;
 }
 
-a {
-  font-family: 'Uni 05';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 300;
-  color: $typeColor;
-  font-size: 95%;
-  text-decoration: none;
-  background: linear-gradient($highlightColor, $highlightColor);
-  background-repeat: no-repeat;
-  background-position: left 0 bottom 0em;
-  background-size: 100% 0.4rem;
-  transition: all 125ms;
-  color: $typeColor;
+// Only links in main
+main {
+  a {
+    font-family: 'Uni 05';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
+    font-size: 95%;
+    text-decoration: none;
+    background-image: -webkit-linear-gradient(left, $bgColor 50%, $accentMagenta 50%, $highlightColor);
+    background-size: 201% auto;
+    background-position: 0 0;
+    transition: background-position 300ms;
 
-  &:active,
-  &:focus,
-  &:hover {
-      outline: 0;
-      font-weight: 300;
-      background-size: 100% 1rem;
+    span {
+      color: $typeColor;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: -webkit-linear-gradient(left, $accentMagenta, $highlightColor 50%, $bgColor 50%);
+      background-size: 200% auto;
+      background-position: 0 0;
+      transition: background-position 300ms;
+    }
+  
+    &:active,
+    &:focus,
+    &:hover {
+        outline: 0;
+        color: $bgColor;
+        background-clip: initial;
+        -webkit-text-fill-color: initial;
+        background-position: -99% 0;
+
+        span {
+          background-position: -100% 0;
+        }
+    }
   }
 }
 

@@ -15,7 +15,7 @@ styles: homepage
         <a href="/contact.html" class="nav-link">Contact</a>
         </nav>
     </div>
-    <div class="jumbotron-right">
-        <p>full-stack engineer, front-end specialist, currently <a href="https://github.com/objectsforheads/portfolio-2019" target="_blank" rel="noopener">yak shaving</a> and <a href="https://learntousevim.com/" target="_blank" rel="external">trying out an IDE cleanse</a>.</p>
-    </div>
+    <main class="jumbotron-right">
+        <p>full-stack engineer, front-end specialist, currently <a href="https://github.com/objectsforheads/portfolio-2019" target="_blank" rel="noopener"><span>yak shaving</span></a> and <a href="https://learntousevim.com/" target="_blank" rel="external"><span>trying out an IDE cleanse</span></a>.</p>
+    </main>
 </div>

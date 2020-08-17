@@ -37,6 +37,49 @@ Promise.all(convertedAllTemplates).then(() => {
     // Look for all pages in ./src/pages (supports .md, .html)
     const convertedAllContentToHtml = [];
 
+    // Parse links with an extra span wrapper for the aesthetic
+    // copy pasta-ing from https://github.com/markedjs/marked/blob/b6773fca412c339e0cedd56b63f9fa1583cfd372/src/Renderer.js#L134
+    const renderer = {
+        link: function(href, title, text) {
+            // Also copying the helper from marked because it's not in this function's scope
+            function cleanUrl(sanitize, base, href) {
+                if (sanitize) {
+                  let prot;
+                  try {
+                    prot = decodeURIComponent(unescape(href))
+                      .replace(nonWordAndColonTest, '')
+                      .toLowerCase();
+                  } catch (e) {
+                    return null;
+                  }
+                  if (prot.indexOf('javascript:') === 0 || prot.indexOf('vbscript:') === 0 || prot.indexOf('data:') === 0) {
+                    return null;
+                  }
+                }
+                if (base && !originIndependentUrl.test(href)) {
+                  href = resolveUrl(base, href);
+                }
+                try {
+                  href = encodeURI(href).replace(/%25/g, '%');
+                } catch (e) {
+                  return null;
+                }
+                return href;
+            }
+            href = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
+            if (href === null) {
+                return text;
+            }
+            let out = '<a href="' + escape(href) + '"';
+            if (title) {
+                out += ' title="' + title + '"';
+            }
+            out += '><span>' + text + '</span></a>';
+            return out;
+        }
+    }
+    marked.use({renderer});
+
     // Markdown files should be processed using gray-matter and marked into html
     const markdownFiles = glob.sync(`${inputDirectory}/**/*.md`);
     markdownFiles.forEach(function(file) {

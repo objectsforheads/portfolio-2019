@@ -23,6 +23,7 @@ body {
     font-size: 3rem;
     color: $typeColor;
     text-transform: uppercase;
+    text-decoration: none;
 
     @if $isAliased == true {
     -webkit-font-smoothing: antialiased;
