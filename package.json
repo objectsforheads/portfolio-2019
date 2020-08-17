@@ -17,7 +17,7 @@
     "watch:assets": "watch 'npm run build:assets' src/assets",
     "livereload": "browser-sync start --server 'dist' --files './dist/**/*'",
     "dev": "npm run watch & npm run livereload",
-    "deploy": "cd dist; git add *; git commit -m 'update portfolio'; git push"
+    "deploy": "bash ./scripts/deploy/release.sh"
   },
   "author": "objectsforheads",
   "license": "ISC",
