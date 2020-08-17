@@ -25,9 +25,7 @@ fi
 
 # Currently on a clean dev branch in SSG
 # Push branch up to GH
-git push --set-upstream origin more-design
-git checkout master
-git branch -D $CURRENT_BRANCH
+git push --set-upstream origin $CURRENT_BRANCH
 
 # Push an equivalent branch onto the site repo
 cd dist
@@ -35,6 +33,11 @@ git checkout -b $CURRENT_BRANCH
 git add *
 git commit -m "release $CURRENT_BRANCH"
 git push --set-upstream origin $CURRENT_BRANCH
+
+# Clean up
+git checkout master
+git branch -D $CURRENT_BRANCH
+cd ..
 git checkout master
 git branch -D $CURRENT_BRANCH
 
