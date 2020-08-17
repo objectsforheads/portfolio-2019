@@ -1,3 +1,6 @@
+
+@import '../includes/_vars.scss';
+
 @font-face {
   font-family: 'Volkorn';
   src: url('../assets/fonts/vollkorn-black-webfont.woff2') format('woff2'),
@@ -84,14 +87,16 @@
        url('../assets/fonts/nanumgothiccoding-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: 'Volkorn';
-  font-weight: 800;
+  font-family: 'Uni 05';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
   display: block;
+  line-height: 1;
 }
 
 h1, .h1 {
@@ -100,49 +105,94 @@ h1, .h1 {
 
 body {
   font-family: 'Volkorn';
+  line-height: 1.5;
 }
 
-a {
-  font-family: 'Uni 05';
-  font-weight: 300;
-  color: #333;
-  font-size: 85%;
-  text-decoration: none;
-  background: linear-gradient(rgb(83, 244, 255), rgb(83, 244, 255));
-  background-repeat: no-repeat;
-  background-position: left 0 bottom 0em;
-  background-size: 100% 0.4rem;
-  transition: all 125ms;
-  color: #000;
+// navbar and footer links
+nav, footer {
+  a {
+    font-family: 'Uni 05';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
+    color: $typeColor;
+    text-decoration: none;
+    display: inline-block;
+    z-index: 1;
 
-  &:hover {
-      font-weight: 300;
-      background-size: 100% 1rem;
+    &::after {
+      content: '';
+      position: absolute;
+      top: .1em;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      background-image: url("../assets/images/squiggle_static.svg");
+      background-position: 0 100%;
+      background-size: auto 0.25em;
+      background-repeat: repeat-x;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      &::after {
+        background-image: url("../assets/images/squiggle.svg");
+      }
+    }
   }
 }
 
-.page-title {
-  display: block;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1rem;
-  font-size: 1.5rem;
-  @media (max-width: 40rem) {
-    width: 100%;
+// Only links in main
+main {
+  a {
+    font-family: 'Uni 05';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
+    font-size: 95%;
+    text-decoration: none;
+    background-image: -webkit-linear-gradient(left, $bgColor 50%, $accentMagenta 50%, $highlightColor);
+    background-size: 201% auto;
+    background-position: 0 0;
+    transition: background-position 300ms;
+
+    span {
+      color: $typeColor;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: -webkit-linear-gradient(left, $accentMagenta, $highlightColor 50%, $bgColor 50%);
+      background-size: 200% auto;
+      background-position: 0 0;
+      transition: background-position 300ms;
+    }
+  
+    &:active,
+    &:focus,
+    &:hover {
+        outline: 0;
+        color: $bgColor;
+        background-clip: initial;
+        -webkit-text-fill-color: initial;
+        background-position: -99% 0;
+
+        span {
+          background-position: -100% 0;
+        }
+    }
   }
 }
 
 p {
   margin-bottom: 1rem;
-  line-height: 1.5;
 }
 
 ul {
   list-style-type: circle;
   line-height: 1.3;
-  padding-left: 1rem;
+  padding-left: 1.25rem;
   margin-bottom: 1rem;
 }
 

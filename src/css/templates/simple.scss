@@ -1,0 +1,125 @@
+
+@import '../includes/_vars.scss';
+
+.page {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    overflow: hidden;
+    margin: 2rem;
+}
+
+.name {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+.nav-bar {
+    border-top: 1rem solid $typeColor;
+    padding: 2rem 0 0 0;
+    display: flex;
+    justify-content: flex-end;
+
+    .nav-link {
+        font-family: 'Uni 05';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-decoration: none;
+        color: $typeColor;
+        display: block;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        background: none;
+        font-weight: 500;
+        margin-left: 1.5em;
+    
+        &:active,
+        &:focus,
+        &:hover {
+            outline: 0;
+            font-weight: 500;
+            white-space: nowrap;
+            &::before {
+                content: '> ';
+                position: absolute;
+                right: calc(100% + 0.25em);
+            }
+        }
+    }
+}
+
+.page-title {
+    border-top: 0.5rem solid $typeColor;
+    margin-top: 2rem;
+    padding: 0 2rem 0 0;
+    text-align: left;
+}
+
+.metadata {
+    font-family: 'Uni 05';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
+    opacity: 75%;
+    margin-top: 2rem;
+
+    & ~ h1 {
+        margin-top: 0;
+    }
+}
+
+.wrapper {
+    flex: auto;
+    background: $bgColor;
+}
+
+.content {
+    text-align: left;
+    border-top: 0.25rem solid $typeColor;
+    margin-top: 2rem;
+    padding: 2rem 0 0 0;
+}
+
+footer {
+    border-top: 0.125rem solid $typeColor;
+    margin-top: 2rem;
+    padding-top: 2rem;
+}
+
+@media only screen and (max-width: 640px) {
+    .page {
+        margin: 2rem 0;
+        overflow: initial;
+    }
+
+    .name {
+        margin: 0 1rem 2rem 1rem;
+    }
+
+    .wrapper {
+        padding: 0 1rem;
+        background: none;
+    }
+
+    .name-shadow,
+    .name-stroke,
+    .name-text {
+        font-size: 2.5rem;
+    }
+
+    .nav-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        a {
+            font-size: 1.5rem;
+        }
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

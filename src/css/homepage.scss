@@ -1,3 +1,6 @@
+@import './includes/_longshadow.scss';
+@import './includes/_vars.scss';
+
 .jumbotron {
     display: flex;
     max-width: 40rem;
@@ -12,30 +15,49 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 3rem 1.5rem 3rem 3rem;
+    padding: 2rem 1.5rem 2rem 2rem;
+}
 
-    > h1 {
-        margin: 0;
-        margin-bottom: 1rem;
-        line-height: 0.8;
+.name {
+    margin-bottom: 1rem;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    align-items: flex-end;
+}
+
+.nav-link {
+    font-family: 'Uni 05';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none;
+    color: $typeColor;
+    display: block;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    background: none;
+    font-weight: 500;
+
+    &:active,
+    &:focus,
+    &:hover {
+        outline: 0;
+        font-weight: 500;
+        white-space: nowrap;
+        &::before {
+            content: '> ';
+            position: absolute;
+            right: calc(100% + 0.25em);
+        }
     }
-
-    .nav-link {
-        display: block;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        background: none;
-        line-height: 1.5;
-
-        &:hover {
-            font-weight: 500;
-          }
-      }
 }
 
 .jumbotron-right {
     text-align: left;
-    padding: 3rem 3rem 3rem 1.5rem;
+    padding: 2rem 2rem 2rem 1.5rem;
     display: flex;
     align-items: center;
         
@@ -50,13 +72,10 @@
         flex-direction: column;
     }
     .jumbotron-left {
-        text-align: left;
-        align-items: start;
-        padding: 3rem;
+        padding: 3rem 3rem 0 3rem;
     }
 
     .jumbotron-right {
         padding: 3rem;
     }
 }
-  

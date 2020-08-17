@@ -1,13 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>objectsforheads - {{pageTitle}}</title>
   {{#each stylesheets}}
   <link href="/css/{{this}}.css?{{../created}}" rel=stylesheet />
   {{/each}}
+  <link href="/css/templates/simple.css?{{../created}}" rel=stylesheet />
 </head>
 <body>
-    <div class="h1 page-title"><a href="/">objectsforheads.com</a></div>
-  <div class="content">{{content}}</div>
+  <div class="page">
+    <div class="name">
+      <a href="/" class="name-shadow">
+        <span class="word">objects</span><br /><span class="word">for</span> <span class="word">heads</span>
+      </a>
+      <div class="name-stroke">
+        objects<br />for heads
+      </div>
+      <div class="name-text">
+        objects<br />for heads
+      </div>
+    </div>
+    <div class="wrapper">
+      <nav class="nav-bar">
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="https://github.com/objectsforheads" class="nav-link" target="_blank" rel="noopener">Github</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </nav>
+      <main>
+        <div class="page-title">
+          {{#if posted}}
+          <div class="metadata">{{posted}}</div>
+          {{/if}}
+          <h1>{{pageTitle}}</h1>
+        </div>
+        <div class="content">{{content}}</div>
+      </main>
+      <footer>
+        <a href="#">↑ return to top</a>
+        <br />
+        ©{{year}} objectsforheads
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
