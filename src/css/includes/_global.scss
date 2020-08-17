@@ -33,8 +33,7 @@ body {
 
 .name-shadow {
     @include siteHeaderType;
-    @include long-shadow(text, $highlightColor, 600, true, true, left);
-    width: 100%;
+    @include long-shadow(text, $highlightColor, 625, true, true, left);
 }
 
 .name-stroke {
@@ -58,15 +57,14 @@ body {
 // When the site header links somewhere (ie. all pages except homepage)
 // ✨ animate it ✨
 @keyframes YOLOColors {
-    0%   {@include long-shadow(text, $accentMagenta, 600, true, true, left);}
-    33%  {@include long-shadow(text, $highlightColor, 600, true, true, left);}
-    66%  {@include long-shadow(text, $accentYellow, 600, true, true, left);}
-    100% {@include long-shadow(text, $accentMagenta, 600, true, true, left);}
+    0%   {@include long-shadow(text, $accentMagenta, 625, true, true, left);}
+    33%  {@include long-shadow(text, $highlightColor, 625, true, true, left);}
+    66%  {@include long-shadow(text, $accentYellow, 625, true, true, left);}
+    100% {@include long-shadow(text, $accentMagenta, 625, true, true, left);}
 }
 
 a.name-shadow {
     background: none;
-    display: block;
     transition: all 0ms;
 
     &:active,
