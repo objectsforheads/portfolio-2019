@@ -18,16 +18,33 @@
 .nav-bar {
     border-top: 1rem solid $typeColor;
     padding: 2rem 0 0 0;
+    display: flex;
+    justify-content: flex-end;
 
-    a {
-        font-size: 2rem;
-        padding-left: 0.5em;
-        margin-right: 0.5em;
-
+    .nav-link {
+        font-family: 'Uni 05';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-decoration: none;
+        color: $typeColor;
+        display: block;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        background: none;
+        font-weight: 500;
+        margin-left: 1.5em;
+    
         &:active,
         &:focus,
         &:hover {
-          background-size: 100% 2rem;
+            outline: 0;
+            font-weight: 500;
+            white-space: nowrap;
+            &::before {
+                content: '> ';
+                position: absolute;
+                right: calc(100% + 0.25em);
+            }
         }
     }
 }

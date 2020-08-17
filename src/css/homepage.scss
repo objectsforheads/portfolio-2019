@@ -1,4 +1,5 @@
 @import './includes/_longshadow.scss';
+@import './includes/_vars.scss';
 
 .jumbotron {
     display: flex;
@@ -14,14 +15,26 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 3rem 1.5rem 3rem 3rem;
+    padding: 2rem 1.5rem 2rem 2rem;
 }
 
 .name {
     margin-bottom: 1rem;
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    align-items: flex-end;
+}
+
 .nav-link {
+    font-family: 'Uni 05';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none;
+    color: $typeColor;
     display: block;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -36,13 +49,15 @@
         white-space: nowrap;
         &::before {
             content: '> ';
+            position: absolute;
+            right: calc(100% + 0.25em);
         }
     }
 }
 
 .jumbotron-right {
     text-align: left;
-    padding: 3rem 3rem 3rem 1.5rem;
+    padding: 2rem 2rem 2rem 1.5rem;
     display: flex;
     align-items: center;
         
