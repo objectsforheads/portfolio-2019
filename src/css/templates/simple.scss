@@ -21,33 +21,10 @@
     padding: 2rem 0 0 0;
     display: flex;
     justify-content: flex-end;
+}
 
-    .nav-link {
-        font-family: 'Uni 05';
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-decoration: none;
-        color: $typeColor;
-        display: block;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        background: none;
-        font-weight: 500;
-        margin-left: 1.5em;
-    
-        &:active,
-        &:focus,
-        &:hover {
-            outline: 0;
-            font-weight: 500;
-            white-space: nowrap;
-            &::before {
-                content: '> ';
-                position: absolute;
-                right: calc(100% + 0.25em);
-            }
-        }
-    }
+.nav-link {
+    margin-left: 1.5em;
 }
 
 .page-title {
@@ -86,6 +63,14 @@ footer {
     border-top: 0.125rem solid $typeColor;
     margin-top: 2rem;
     padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    align-items: flex-end;
+}
+
+.footer-links {
+    margin-bottom: 0.125rem;
 }
 
 @media only screen and (max-width: 640px) {
