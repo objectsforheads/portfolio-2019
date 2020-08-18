@@ -185,6 +185,47 @@ main {
   }
 }
 
+// Manually writing this part out because compilation strips some necessary hacking
+/* 
+* Link highlighting doesn't work as expected in safari so provide a safari-specific fallback
+* https://browserstrangeness.github.io/css_hacks.html#safari
+*/
+_::-webkit-full-page-media, _:future, :root main a span { -webkit-box-decoration-break: clone; }
+
+/* Safari! Having issues getting the in-file CSS animation to work; it sticks on the first frame
+* Safari users instead get a hot pink link because I want moving squiggly lines
+* but don't want to add another span and will give up an arrow to make this happen
+*/
+
+/* Prep to shift the squiggly psueudoelement on hover */
+@keyframes squiggleWave {
+0%   {transform:translateX(0);}
+100%  {transform:translateX(-50%);}
+}
+
+_::-webkit-full-page-media, _:future, :root nav a {
+overflow: hidden;
+padding: 0 0 0.2em 2px;
+}
+
+_::-webkit-full-page-media, _:future, :root nav a::after {
+width: 200%;
+top: auto;
+bottom: 0;
+}
+
+/* Animate the squiggle on hover */
+_::-webkit-full-page-media,
+_:future,
+:root nav a:active::after,
+:root nav a:focus::after,
+:root nav a:hover::after,
+:root footer a:active::after,
+:root footer a:focus::after,
+:root footer a:hover::after {
+animation: squiggleWave 6000ms linear infinite;
+}
+
 p {
   margin-bottom: 1rem;
 }
