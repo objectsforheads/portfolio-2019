@@ -37,9 +37,8 @@
         <div class="content">{{content}}</div>
       </main>
       <footer>
-        <a href="#">↑ return to top</a>
-        <br />
-        ©{{year}} objectsforheads
+        <div class="footer-links"><a href="#">↑ return to top</a></div>
+        <div class="copyright">©{{year}} objectsforheads</div>
       </footer>
     </div>
   </div>

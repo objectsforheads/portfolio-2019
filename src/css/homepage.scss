@@ -29,32 +29,6 @@ nav {
     align-items: flex-end;
 }
 
-.nav-link {
-    font-family: 'Uni 05';
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-decoration: none;
-    color: $typeColor;
-    display: block;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    background: none;
-    font-weight: 500;
-
-    &:active,
-    &:focus,
-    &:hover {
-        outline: 0;
-        font-weight: 500;
-        white-space: nowrap;
-        &::before {
-            content: '> ';
-            position: absolute;
-            right: calc(100% + 0.25em);
-        }
-    }
-}
-
 .jumbotron-right {
     text-align: left;
     padding: 2rem 2rem 2rem 1.5rem;
