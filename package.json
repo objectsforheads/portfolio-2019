@@ -4,10 +4,10 @@
   "description": "",
   "scripts": {
     "clean": "npm run clean:html & npm run clean:css",
-    "clean:html": "rm -rf ./dist/*.*",
+    "clean:html": "rm -rf ./dist/*.html && rm -rf ./dist/**/*.html",
     "clean:css": "rm -rf ./dist/css",
     "clean:assets": "rm -rf ./dist/assets",
-    "build": "npm run build:html && npm run build:css",
+    "build": "npm run build:html && npm run build:css && npm run build:assets",
     "build:html": "node ./scripts/build/pages.js",
     "build:css": "mkdir -p ./dist/css && sass ./src/css:./dist/css --no-source-map && postcss ./dist/css -r --use autoprefixer --no-map",
     "build:assets": "npm run clean:assets && mkdir -p ./dist/assets && cp -r ./src/assets ./dist/",
