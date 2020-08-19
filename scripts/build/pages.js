@@ -70,7 +70,17 @@ Promise.all(convertedAllTemplates).then(() => {
             if (href === null) {
                 return text;
             }
-            let out = '<a href="' + escape(href) + '"';
+
+            // Allow for mailto links
+            if (href.startsWith('mailto:')) {
+                href = href.split('mailto:');
+                console.log(href[1]);
+                href = `mailto:` + escape(href);
+            } else {
+                href = escape(href);
+            }
+
+            let out = '<a href="' + href + '"';
             if (title) {
                 out += ' title="' + title + '"';
             }
