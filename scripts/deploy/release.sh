@@ -34,11 +34,7 @@ git add *
 git commit -m "release $CURRENT_BRANCH"
 git push --set-upstream origin $CURRENT_BRANCH
 
-# Clean up
-git checkout master
-git branch -D $CURRENT_BRANCH
+# Return to root
 cd ..
-git checkout master
-git branch -D $CURRENT_BRANCH
 
-echo "Fin - don't forget to merge this branch into master on both repo's"
+echo "Fin - don't forget to merge branches into master on both repo's and delete them after"
