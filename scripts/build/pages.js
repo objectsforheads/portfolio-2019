@@ -73,8 +73,7 @@ Promise.all(convertedAllTemplates).then(() => {
 
             // Allow for mailto links
             if (href.startsWith('mailto:')) {
-                href = href.split('mailto:');
-                console.log(href[1]);
+                href = href.split('mailto:')[1];
                 href = `mailto:` + escape(href);
             } else {
                 href = escape(href);
