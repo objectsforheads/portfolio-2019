@@ -23,7 +23,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.27.10",
     "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
     "handlebars": "^4.7.6",
